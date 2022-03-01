@@ -11,6 +11,7 @@ require "csv"
 # Deletes the player, club, and country records without instantiating the records first.
 Player.delete_all
 Country.delete_all
+Page.delete_all
 
 # Add the file path of the csv file.
 filepath = Rails.root.join("db/players.csv")
@@ -25,16 +26,7 @@ data = CSV.parse(csv_data, headers: true, encoding: "utf-8")
 
 # Read the each player short name from the file.
 data.each do |c|
-  # puts p["short_name"]
-  # country = Country.find_or_create_by(country: p["nationality"])
-  # player = Player.find_or_create_by(
-  #   player: p["short_name"],
-  #   country: p["nationality"],
-  #   club: p["club"],
-  #   position: p["nation_position"],
-  #   overall: p["overall"]
-  #   )
-
+  # puts c["short_name"]
 
   # country = Country.create(name: ["nationality"])
   country = Country.find_or_create_by(name: c["nationality"])
@@ -50,6 +42,12 @@ data.each do |c|
     puts "Invalid country #{c["country"]}for the player #{c['short_name']}"
   end
 end
+
+Page.create(
+  title: "About Footballers",
+  content: "The data",
+  permalink: "about"
+)
 
 puts "Created #{Country.count} countries."
 puts "Created #{Player.count} players."

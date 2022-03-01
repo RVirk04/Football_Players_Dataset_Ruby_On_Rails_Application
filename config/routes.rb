@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :pages
+  get 'homes/index'
+  get 'home/index'
   # get 'countries/index'
   # get 'countries/show'
   # get 'players/index'
@@ -8,6 +11,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root to: "players#index"
 
 end
