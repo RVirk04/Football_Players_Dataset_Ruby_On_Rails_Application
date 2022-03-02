@@ -1,4 +1,5 @@
 <h1>Countries#index</h1>
+<%= will_paginate @countries, previous_label: "PREV", next_label: "NEXT", inner_window: 1, outer_window: 0 %>
 <table>
     <tr>
       <th>Id.</th>
@@ -11,3 +12,4 @@
       </tr>
     <% end %>
 </table>
+<%= will_paginate @countries, previous_label: "PREV", next_label: "NEXT", inner_window: 1, outer_window: 0 %>
