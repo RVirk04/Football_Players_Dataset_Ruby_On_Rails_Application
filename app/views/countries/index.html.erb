@@ -1,15 +1,24 @@
 <h1>Countries#index</h1>
+<form method="GET" action="/search">
+  <input type="search" placeholder="Search" aria-label="Search" name="query" >
+  <button type="submit">Search</button>
+</form>
 <%= will_paginate @countries, previous_label: "PREV", next_label: "NEXT", inner_window: 1, outer_window: 0 %>
-<table>
-    <tr>
-      <th>Id.</th>
-      <th>Country</th>
-    </tr>
-    <% @countries.each do |country| %>
+<% if @countries.empty? %>
+  <p>No result found for the <%= params[:query] %></p>
+<% else %>
+  <table>
       <tr>
-        <td><%= country.id %></td>
-        <td><%= country.name %></td>
+        <th>Id.</th>
+        <th>Country</th>
       </tr>
-    <% end %>
-</table>
+        <% @countries.each do |country| %>
+          <tr>
+            <td><%= country.id %></td>
+            <td><%= country.name %></td>
+          </tr>
+        <% end %>
+  </table>
+<% end %>
 <%= will_paginate @countries, previous_label: "PREV", next_label: "NEXT", inner_window: 1, outer_window: 0 %>
+
