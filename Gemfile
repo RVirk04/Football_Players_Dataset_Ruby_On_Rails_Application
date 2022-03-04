@@ -71,8 +71,12 @@ group :test do
   gem "webdrivers"
 end
 
+# will_paginate is a pagination library.
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+
+# Ransack enables the creation of both simple and advanced search forms for your Ruby on Rails application.
 gem 'ransack', github: 'activerecord-hackery/ransack'
+
 # The bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
