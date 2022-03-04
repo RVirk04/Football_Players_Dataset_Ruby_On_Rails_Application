@@ -1,23 +1,37 @@
-<hr>
-<header>
-  <ul>
-    <li><%= link_to "Players", players_path %></li>
-    <li><%= link_to "Country", countries_path %></li>
-    <li>Club</li>
-    <% cms_pages.each do |page| %>
-      <li><%= link_to page.title, permalink_path(page.permalink) %></li>
-    <% end %>
-  <%# <%= form_tag players_path, :method => "GET" do %>
-    <%# <%= search_form_for @q do |f| %>
-      <%# <%= f.search_field :keyword, {placeholder: 'Search player...'} %>
-      <%# <%= collection_select :country, :id, Country.all.order('name ASC'), :id, :name, {include_blank: 'Select Category'}%>
-      <%# <%= f.select :search_category, options_for_select(@countries), include_blank: 'Select Category' %>
-      <%# <%= f.submit "Search" %>
-    <%# <% end %>
-    <%= form_tag players_path, method: 'get', id: 'players_search' do %>
-      <%= text_field_tag :keyword, params[:keyword] %>
-      <%= select_tag :search_category,  options_from_collection_for_select(Country.all, "id", "name"), :include_blank => 'All' %>
-      <%= submit_tag "Search", name: nil %>
-    <% end %>
-  </ul>
-</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Footballers</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Players", players_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Country", countries_path, class: "nav-link"  %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Club</a>
+        </li>
+        <% cms_pages.each do |page| %>
+          <li class="nav-item">
+            <%= link_to page.title, permalink_path(page.permalink), class: "nav-link"  %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="search-box col-md-5">
+      <%= form_tag players_path, method: 'get', id: 'players_search' do %>
+      <div class="d-flex">
+        <%= text_field_tag :keyword, params[:keyword], class: "form-control" %>
+        <%= select_tag :search_category,  options_from_collection_for_select(Country.all, "id", "name"), :include_blank => 'All', class: "form dropdown-toggle" %>
+        <div class="input-group-append">
+          <%= submit_tag "Search", name: nil, class: "btn btn-success" %>
+        </div>
+      </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
