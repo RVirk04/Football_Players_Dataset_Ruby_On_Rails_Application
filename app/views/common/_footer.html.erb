@@ -1,12 +1,43 @@
-<hr>
-<footer>
-  <ul>
-    <li><%= link_to "Players", players_path %></li>
-    <li><%= link_to "Country", countries_path %></li>
-    <li>Club</li>
-    <% cms_pages.each do |page| %>
-      <li><%= link_to page.title, permalink_path(page.permalink) %></li>
-    <% end %>
-  </ul>
-  <p>Copyright<span>&copy;</span>2022 Virk Inc. - All rights reserved</p>
+<!-- Footer -->
+<footer class="bg-dark font-small text-white">
+  <!-- Footer Links -->
+  <div class="container">
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-3 mb-1">
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <%= link_to "Players", players_path, class: "nav-link link-light text-uppercase font-weight-bold" %>
+      </div>
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <%= link_to "Country", countries_path, class: "nav-link link-light text-uppercase font-weight-bold" %>
+      </div>
+      <!-- Grid column -->
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <div class= "nav-link link-light text-uppercase font-weight-bold">
+          Club
+        </div>
+      </div>
+      <!-- Grid column -->
+      <% cms_pages.each do |page| %>
+        <!-- Grid column -->
+        <div class="col-md-3 mb-0">
+          <%= link_to page.title, permalink_path(page.permalink), class: "nav-link link-light text-uppercase font-weight-bold" %>
+        </div>
+        <!-- Grid column -->
+      <% end %>
+    </div>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0;">
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-2">
+    Copyright<span>&copy;</span>2022 Virk Inc. - All rights reserved
+  </div>
+  <!-- Copyright -->
+
 </footer>
+<!-- Footer -->
