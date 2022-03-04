@@ -73,3 +73,8 @@ end
 
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+# The bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
+# Autoprefixer is a tool to parse CSS and add vendor prefixes to CSS rules using values from the 'Can I Use' database.
+gem "autoprefixer-rails"
