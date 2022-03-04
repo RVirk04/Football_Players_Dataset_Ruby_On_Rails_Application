@@ -7,12 +7,17 @@
     <% cms_pages.each do |page| %>
       <li><%= link_to page.title, permalink_path(page.permalink) %></li>
     <% end %>
-  <%# <%= form_tag players_path, :method => "GET" do %> %>
-    <%= search_form_for%>
-      <%= text_field_tag :keyword, params[:keyword], {placeholder: 'Search player...'} %>
+  <%# <%= form_tag players_path, :method => "GET" do %>
+    <%# <%= search_form_for @q do |f| %>
+      <%# <%= f.search_field :keyword, {placeholder: 'Search player...'} %>
       <%# <%= collection_select :country, :id, Country.all.order('name ASC'), :id, :name, {include_blank: 'Select Category'}%>
-      <%= select_tag :search_category, options_for_select(@countries), include_blank: 'Select Category' %>
-      <%= submit_tag "Search" %>
+      <%# <%= f.select :search_category, options_for_select(@countries), include_blank: 'Select Category' %>
+      <%# <%= f.submit "Search" %>
+    <%# <% end %>
+    <%= form_tag players_path, method: 'get', id: 'players_search' do %>
+      <%= text_field_tag :keyword, params[:keyword] %>
+      <%= select_tag :search_category,  options_from_collection_for_select(Country.all, "id", "name"), :include_blank => 'All' %>
+      <%= submit_tag "Search", name: nil %>
     <% end %>
   </ul>
 </header>
