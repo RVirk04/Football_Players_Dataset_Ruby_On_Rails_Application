@@ -11,9 +11,9 @@ class CountriesController < ApplicationController
     @query = params[:query]
     @countries = Country.paginate(page: params[:page], per_page: 10).where("countries.name LIKE ?",["%#{@query}%"])
     render "index"
-    if @query.empty?
-      flash[:notice] = "No results found for #{params[:query]}"
-    end
+    # if @query.empty?
+    #   flash[:notice] = "No results found for #{params[:query]}"
+    # end
   end
 
 end
