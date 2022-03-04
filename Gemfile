@@ -77,8 +77,8 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 # Ransack enables the creation of both simple and advanced search forms for your Ruby on Rails application.
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
-# The bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+# Bootstrap 5 ruby gem for Ruby on Rails (Sprockets)
+gem 'bootstrap', '~> 5.1.3'
 
 # Autoprefixer is a tool to parse CSS and add vendor prefixes to CSS rules using values from the 'Can I Use' database.
 gem "autoprefixer-rails"
