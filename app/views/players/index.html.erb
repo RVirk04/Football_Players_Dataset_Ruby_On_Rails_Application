@@ -1,20 +1,31 @@
 <h1>Players#index</h1>
 <%= will_paginate @players, previous_label: "PREV", next_label: "NEXT", inner_window: 1, outer_window: 0  %>
-<table>
-    <tr>
-      <th>Player</th>
-      <th>Nationality</th>
-      <th>Position</th>
-      <th>Overall</th>
-    </tr>
-
-    <% @players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= player.country.name %></td>
-        <td><%= player.position %></td>
-        <td><%= player.overall %></td>
-        </tr>
-    <% end %>
-</table>
+<section class="content-info">
+  <div class="container paddings-mini">
+    <div class="row">
+      <div class="col-lg-12">
+        <table class="table-striped table-responsive table-hover result-point">
+          <thead class="point-table-head">
+            <tr>
+              <th>Player</th>
+              <th>Nationality</th>
+              <th>Position</th>
+              <th>Overall</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <% @players.each do |player| %>
+              <tr>
+                <td><%= player.name %></td>
+                <td><%= player.country.name %></td>
+                <td><%= player.position %></td>
+                <td><%= player.overall %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 <%= will_paginate @players, previous_label: "PREV", next_label: "NEXT", inner_window: 1, outer_window: 0 %>
