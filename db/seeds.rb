@@ -45,7 +45,7 @@ end
 
 Page.create(
   title: "About Footballers",
-  content: "The data",
+  content: "The dataset in this application is taken from the site Kaggle. This application will fetch fetch the data from the csv file and formats it in to the table with a lot functiionlaity. So, footballers is all about the data of players.",
   permalink: "about"
 )
 

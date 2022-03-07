@@ -1,1 +1,16 @@
-<h1><%= @player.name %></h1>
+<!-- Player Card -->
+<div class="card text-white text-center" style="margin: 50px 500px;" >
+  <div class="card-header bg-dark">
+    <h1><%= @player.name %></h1>
+  </div>
+  <div class="card-body bg-secondary">
+    <p class="card-text">Nationality: <%= @player.country.name %></p>
+    <p class="card-text">Position: <%= @player.position %></p>
+    <p class="card-text">Overall: <%= @player.overall %></p>
+    <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+  </div>
+  <div class="card-footer text-muted">
+    Player Card
+  </div>
+</div>
+<!-- Player Card -->

@@ -82,3 +82,6 @@ gem 'bootstrap', '~> 5.1.3'
 
 # Autoprefixer is a tool to parse CSS and add vendor prefixes to CSS rules using values from the 'Can I Use' database.
 gem "autoprefixer-rails"
+
+# The gem geocoder is a tool to find the location on the map.
+gem "geocoder"

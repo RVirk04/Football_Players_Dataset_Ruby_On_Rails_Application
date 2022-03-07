@@ -5,6 +5,13 @@ class CountriesController < ApplicationController
   end
 
   def show
+    # if params[:location].present?
+    #   @country = Country.near(params[:name])
+    # else
+    #   @country = Country.find(params[:id])
+    # end
+    # @country = @country.to_gmaps4rails
+    @country = Country.find(params[:id])
   end
 
   def search

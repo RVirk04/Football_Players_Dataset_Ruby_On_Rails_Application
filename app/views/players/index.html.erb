@@ -1,11 +1,20 @@
-<h1>Players#index</h1>
-<%= will_paginate @players, previous_label: "PREV", next_label: "NEXT", inner_window: 1, outer_window: 0  %>
 <section class="content-info">
   <div class="container paddings-mini">
     <div class="row">
       <div class="col-lg-12">
-        <table class="table-striped table-responsive table-hover result-point">
-          <thead class="point-table-head">
+      <h1>Players</h1>
+      <!-- Pagination -->
+        <div aria-label="Page navigation example">
+          <ul class="pagination justify-content-end">
+            <li class="page-item">
+              <%= will_paginate @players, previous_label: "PREV", next_label: "NEXT", inner_window: 1, outer_window: 0, class: "page-link" %>
+            </li>
+          </ul>
+        </div>
+        <!-- Pagination -->
+        <!--Table -->
+        <table class="table table-striped table-responsive table-bordered table-hover result-point">
+          <thead class="table-dark text-center">
             <tr>
               <th>Player</th>
               <th>Nationality</th>
@@ -16,7 +25,7 @@
           <tbody class="text-center">
             <% @players.each do |player| %>
               <tr>
-                <td><%= player.name %></td>
+                <td><%= link_to player.name, player_path(player) %></td>
                 <td><%= player.country.name %></td>
                 <td><%= player.position %></td>
                 <td><%= player.overall %></td>
@@ -24,8 +33,17 @@
             <% end %>
           </tbody>
         </table>
+        <!-- Table -->
+        <!-- Pagination -->
+        <div aria-label="Page navigation example">
+          <ul class="pagination justify-content-end">
+            <li class="page-item">
+              <%= will_paginate @players, previous_label: "PREV", next_label: "NEXT", inner_window: 1, outer_window: 0, class: "page-link" %>
+            </li>
+          </ul>
+        </div>
+        <!-- Pagination -->
       </div>
     </div>
   </div>
 </section>
-<%= will_paginate @players, previous_label: "PREV", next_label: "NEXT", inner_window: 1, outer_window: 0 %>
