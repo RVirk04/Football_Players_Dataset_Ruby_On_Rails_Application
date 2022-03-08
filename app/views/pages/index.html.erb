@@ -1,14 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Pages</h1>
+<div class="border border-light p-3 mb-4">
+  <h1>Pages
+    <%= link_to "New page", new_page_path, class: "btn btn-danger", style: "margin: 0px 0px 0px 30px; width:300px;"%>
+  </h1>
+</div>
 
-<div id="pages">
+<div id="pages" class="text-center">
   <% @pages.each do |page| %>
     <%= render page %>
-    <p>
-      <%= link_to "Show this page", page %>
-    </p>
+      <%= link_to "Show this page", page, class: "btn btn-primary", style: "margin: -70px 0px 0px; width:300px;" %>
   <% end %>
 </div>
 
-<%= link_to "New page", new_page_path %>
+

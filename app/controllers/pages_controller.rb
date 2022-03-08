@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
   # GET /pages/1 or /pages/1.json
   def show
-    @pages = Page.find_by(permalink: params[:permalink])
+    @pages = Page.find(params[:id])
   end
 
   # GET /pages/new

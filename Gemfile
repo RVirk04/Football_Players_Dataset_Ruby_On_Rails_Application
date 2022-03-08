@@ -75,7 +75,7 @@ end
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 # Ransack enables the creation of both simple and advanced search forms for your Ruby on Rails application.
-gem 'ransack', github: 'activerecord-hackery/ransack'
+# gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Bootstrap 5 ruby gem for Ruby on Rails (Sprockets)
 gem 'bootstrap', '~> 5.1.3'
@@ -84,4 +84,4 @@ gem 'bootstrap', '~> 5.1.3'
 gem "autoprefixer-rails"
 
 # The gem geocoder is a tool to find the location on the map.
-gem "geocoder"
+# gem "geocoder"

@@ -45,7 +45,12 @@ end
 
 Page.create(
   title: "About Footballers",
-  content: "The dataset in this application is taken from the site Kaggle. This application will fetch fetch the data from the csv file and formats it in to the table with a lot functiionlaity. So, footballers is all about the data of players.",
+  content: "This application takes the data from Kaggle in the form of csv file. And later on,
+  parse it into the models database. This dataset contains three tables which are Players,
+  countries, and clubs. The players can has country as well as club but club can have many
+  players and countries can have many as well as players. The players table include 5 columns
+  player name, nationality, club, position, overall. Afterthat countries contains one column
+  just name and same for the club table as well.",
   permalink: "about"
 )
 

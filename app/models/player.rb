@@ -12,7 +12,7 @@ class Player < ApplicationRecord
       elsif keyword == " " && search_category != "All"
         joins(:countries).where('countries.id = ?', "%#{search_category}%")
       else
-        where('name LIKE ? OR country_id = ?', "%#{keyword}%", "%#{search_category}%")
+        where('name LIKE ? AND country_id = ?', "%#{keyword}%", "%#{search_category}%")
       end
     else
       all

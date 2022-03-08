@@ -1,17 +1,26 @@
 <div id="<%= dom_id page %>">
-  <p>
-    <strong>Title:</strong>
-    <%= page.title %>
-  </p>
+  <!-- Member Card -->
+  <div class="card text-white text-center" style="margin: 50px 500px;" >
+    <div class="card-header bg-dark">
+      <%= page.title %>
+    </div>
+    <div class="card-body bg-secondary">
+      <%# <p class="card-text">
+        <strong>Title:</strong>
+        <%= page.title %>
+      <%# </p> %>
+      <p class="card-text">
+        <%# <strong>Content:</strong> %>
+        <%= page.content %>
+      </p>
 
-  <p>
-    <strong>Content:</strong>
-    <%= page.content %>
-  </p>
-
-  <p>
-    <strong>Permalink:</strong>
-    <%= page.permalink %>
-  </p>
-
+      <p class="card-text">
+        <strong>Permalink:</strong>
+        <%= page.permalink %>
+      </p>
+      <div class="card-footer">
+        <%= page.title %> Card
+      </div>
+  </div>
+    <!-- Member Card -->
 </div>

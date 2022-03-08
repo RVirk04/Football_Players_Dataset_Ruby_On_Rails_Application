@@ -23,7 +23,7 @@
       <% cms_pages.each do |page| %>
         <!-- Grid column -->
         <div class="col-md-3 mb-0">
-          <%= link_to page.title, permalink_path(page.permalink), class: "nav-link link-light text-uppercase font-weight-bold" %>
+          <%= link_to page.title, pages_path, class: "nav-link link-light text-uppercase font-weight-bold" %>
         </div>
         <!-- Grid column -->
       <% end %>
